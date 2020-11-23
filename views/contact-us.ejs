@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Contact Us | Task Manager</title>
+        <script src="https://kit.fontawesome.com/fe68cb5b10.js" crossorigin="anonymous"></script>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            body{
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                min-height: 95vh;
+                padding-bottom: 28px;
+                position: relative;
+                font-weight: 595;
+            }
+            header{
+                background-color: grey;
+                text-align: center;
+                min-height: 5vh;
+            }
+            header ul li{
+                display: inline-block;
+                list-style: none;
+            }
+            header ul li a{
+                color: whitesmoke;
+                text-decoration: none;
+                float: left;
+                padding: 5px;
+            }
+            header ul li a:hover{
+                background-color: lime;
+            }
+            main{
+                text-align: center;
+            }
+            footer{
+                background-color: black;
+                color: whitesmoke;
+                text-align: center;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <ul>
+                <li><a href="/task-manager/<%= user._id %>">Home</a></li>
+                <li><a href="/task-manager/<%= user._id %>/about-us">About us</a></li>
+                <li><a href="/task-manager/<%= user._id %>/contact-us">Contact us</a></li>
+                <li><a href="/task-manager/<%= user._id %>/logout">Log out</a></li>  
+            </ul>
+        </header>
+        <main>
+                <h1>Contact Us</h1>
+                <p>We provide best web applications across the globe.</p>
+                <a href="#" class="fab fa-instagram"></a>
+                <a href="#" class="fab fa-linkedin"></a>
+        </main>
+        <footer>
+            <p>copyright &copy; <%= new Date().getFullYear() %> | Developer - Mohit Talreja | Email - talrejamohit15@gmail.com</p>
+        </footer>
+    </body>
+</html>

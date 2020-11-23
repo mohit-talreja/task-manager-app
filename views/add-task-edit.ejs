@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Task | Task Manager</title> 
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            body{
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                position: relative;
+                padding-bottom: 28px;
+                min-height: 95vh;
+                font-weight: 595;
+            }
+            header{
+                min-height: 5vh;
+            }
+            main #fieldset{
+                border: 2px solid groove;
+                padding: 25px 25px;
+                margin-left: 387px;
+                margin-right: 387px;
+            }
+            main #addTaskMsg{
+                opacity: 0.7;
+            }
+            main #updateTaskBtn{
+                background-color: blue;
+                color: white;
+                border: none;
+                padding: 5px;
+                border-radius: 5px;
+                display: inline-block;
+            }
+            main #taskManagerLink{
+                text-decoration: none;
+            }
+            footer{
+                background-color: black;
+                color: whitesmoke;
+                text-align: center;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <header></header>
+        <main>
+            <form action="/task-manager/<%= user._id %>/add-task/tasks-list/update-task/<%= task._id %>" method="POST">
+                <fieldset id="fieldset">
+                    <center>
+                        <h1>Task Manager</h1>
+                        <h3 id="addTaskMsg">Add a task for today.</h3>
+                        <table>
+                            <tr>
+                                <td><label for="title">Title:</label></td>
+                                <td><input type="text" name="title" placeholder="title" value="<%= task.title %>" required></td>
+                            </tr>
+                            <tr>
+                                <td><label for="description">Description:</label></td>
+                                <td><textarea rows="5" cols="20" name="description" placeholder="description" required><%= task.description %></textarea></td>
+                            </tr>
+                        </table>
+                        <button type="submit" name="updatetask" id="updateTaskBtn">update task</button>
+                        <a href="/task-manager/<%= user._id %>" id="taskManagerLink">Back to Task Manager.</a>
+                    </center>
+                </fieldset>
+            </form>
+        </main>
+        <footer>
+            <p>copyright &copy; <%= new Date().getFullYear() %> | Developer - Mohit Talreja | Email - talrejamohit15@gmail.com</p>
+        </footer>
+    </body>
+</html>
